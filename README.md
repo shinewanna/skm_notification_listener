@@ -33,14 +33,14 @@ Inside AndroidManifest add this to bind notification service with your applicati
 
 ```dart
  /// check if notification permission is enabled
- final bool status = await NotificationListenerService.isPermissionGranted();
+ final bool status = await SkmNotificationListener.isPermissionGranted();
 
  /// request notification permission
  /// it will open the notifications settings page and return `true` once the permission granted.
- final bool status = await NotificationListenerService.requestPermission();
+ final bool status = await SkmNotificationListener.requestPermission();
 
  /// stream the incoming notification events
-  NotificationListenerService.notificationsStream.listen((event) {
+  SkmNotificationListener.notificationsStream.listen((event) {
     log("Current notification: $event");
   });
 ```
