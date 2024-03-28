@@ -1,6 +1,6 @@
 name: skm_notification_listener
 description: "Flutter plugin to listen to all incoming notifications (posted or removed) with the possibility to reply to them."
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/sabeelmuttil/skm_notification_listener
 
 environment:
