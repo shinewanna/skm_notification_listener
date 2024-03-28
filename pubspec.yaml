@@ -1,11 +1,11 @@
 name: skm_notification_listener
-description: "A new Flutter plugin project."
+description: "Flutter plugin to listen to all incoming notifications (posted or removed) with the possibility to reply to them."
 version: 0.0.1
-homepage:
+homepage: https://github.com/sabeelmuttil/skm_notification_listener
 
 environment:
-  sdk: '>=3.3.1 <4.0.0'
-  flutter: '>=3.3.0'
+  sdk: ">=3.3.1 <4.0.0"
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
