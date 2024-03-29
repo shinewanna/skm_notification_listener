@@ -97,7 +97,7 @@ To reply to a notification provides:
 
 ```
 
+<!--
 ## Screenshots
-
-<!-- <img src="https://user-images.githubusercontent.com/22800380/165560254-fc72ed1f-a31e-4498-b6de-18cea539ca11.png" width="300">
+<img src="https://user-images.githubusercontent.com/22800380/165560254-fc72ed1f-a31e-4498-b6de-18cea539ca11.png" width="300">
  -->
