@@ -43,13 +43,13 @@ public class NotificationListener extends NotificationListenerService {
     private void handleNotification(StatusBarNotification notification, boolean isRemoved) {
         String packageName = notification.getPackageName();
         Bundle extras = notification.getNotification().extras;
-        byte[] appIcon = getAppIcon(packageName);
-        byte[] largeIcon = null;
+//        byte[] appIcon = getAppIcon(packageName);
+//        byte[] largeIcon = null;
         Action action = NotificationUtils.getQuickReplyAction(notification.getNotification(), packageName);
 
-        if (Build.VERSION.SDK_INT >= VERSION_CODES.M) {
-            largeIcon = getNotificationLargeIcon(getApplicationContext(), notification.getNotification());
-        }
+//        if (Build.VERSION.SDK_INT >= VERSION_CODES.M) {
+//            largeIcon = getNotificationLargeIcon(getApplicationContext(), notification.getNotification());
+//        }
 
         Intent intent = new Intent(NotificationConstants.INTENT);
         intent.putExtra(NotificationConstants.PACKAGE_NAME, packageName);
@@ -60,8 +60,8 @@ public class NotificationListener extends NotificationListenerService {
             cachedNotifications.put(notification.getId(), action);
         }
 
-        intent.putExtra(NotificationConstants.NOTIFICATIONS_ICON, appIcon);
-        intent.putExtra(NotificationConstants.NOTIFICATIONS_LARGE_ICON, largeIcon);
+//        intent.putExtra(NotificationConstants.NOTIFICATIONS_ICON, appIcon);
+//        intent.putExtra(NotificationConstants.NOTIFICATIONS_LARGE_ICON, largeIcon);
 
         CharSequence title = extras.getCharSequence(Notification.EXTRA_TITLE);
         CharSequence text = extras.getCharSequence(Notification.EXTRA_TEXT);
@@ -77,16 +77,16 @@ public class NotificationListener extends NotificationListenerService {
         intent.putExtra(NotificationConstants.NOTIFICATION_TITLE, title == null ? null : title.toString());
         intent.putExtra(NotificationConstants.NOTIFICATION_CONTENT, text == null ? null : text.toString());
         intent.putExtra(NotificationConstants.IS_REMOVED, isRemoved);
-        intent.putExtra(NotificationConstants.HAVE_EXTRA_PICTURE, extras.containsKey(Notification.EXTRA_PICTURE));
+//        intent.putExtra(NotificationConstants.HAVE_EXTRA_PICTURE, extras.containsKey(Notification.EXTRA_PICTURE));
 
-        if (extras.containsKey(Notification.EXTRA_PICTURE)) {
-            Bitmap bmp = (Bitmap) extras.get(Notification.EXTRA_PICTURE);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            if(bmp != null) {
-                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            }
-            intent.putExtra(NotificationConstants.EXTRAS_PICTURE, stream.toByteArray());
-        }
+//        if (extras.containsKey(Notification.EXTRA_PICTURE)) {
+//            Bitmap bmp = (Bitmap) extras.get(Notification.EXTRA_PICTURE);
+//            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//            if(bmp != null) {
+//                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//            }
+//            intent.putExtra(NotificationConstants.EXTRAS_PICTURE, stream.toByteArray());
+//        }
         sendBroadcast(intent);
     }
 
